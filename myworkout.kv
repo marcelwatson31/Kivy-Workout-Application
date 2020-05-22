@@ -1,0 +1,59 @@
+<Button>:
+    font_size:12
+    color:0.1, .1, .1, 1
+    id: btn
+    
+    size_hint: .5, .1
+
+<Button>:
+    font_size:12
+    color:0.1, .1, .1, 1
+    id: bn
+    
+    size_hint: .5, .1
+
+<Button>:
+    font_size:12
+    color:0.1, .1, .1, 1
+    id: start
+    
+    size_hint: .5, .1
+
+
+
+<FloatLayout>:
+    
+    Button:
+        pos_hint: {"x":.5, "top":.1}
+        id: btn
+        
+        text: "Cancel Workout" if btn.state == 'normal' else 'Canceling Workout'
+        background_color:.99, .65, .0, 1.0
+
+    Button:
+        id: bn
+        text : "Start Workout" if bn.state == 'normal' else 'Starting Workout'
+        pos_hint: {"x":.0, "top":.1}
+        on_press: app.timer()
+    Label:
+        text: "To hold the mic I'm throbbin', mechanical movement Understandable smooth shit that murderers move with"
+        pos_hint:  {"x":.0, "top":1}
+    Label:
+        text: "Marcel's WorkOut App"
+        pos_hint:  {"x":.0, "top":1.4}
+    CheckBox:
+        text: "Check if finished"
+        pos_hint: {"x": .2, "top": 1}
+    TextInput:
+        text: "What workouts would you like to do?"
+        size_hint: .2, .1
+        pos_hint: {"x": .1, "top": .9}
+        focus: True 
+    Button: 
+        text: "0" if start.state == 'normal'  else count()
+        pos_hint: {"x": .2, "top": 1}
+        id: start
+        on_press: pass
+        on_release: pass
+        
+
